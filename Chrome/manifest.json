@@ -19,5 +19,5 @@
 	"permissions": [
 		"activeTab",
 		"tabs"
-	],
+	]
 }

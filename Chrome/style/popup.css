@@ -4,7 +4,7 @@ body {
 	padding: 0;
 	margin: 0;
 	overflow-y: scroll;
-	font-family: 'Segoe UI';
+	font-family: 'Roboto';
 }
 
 content {
@@ -12,6 +12,53 @@ content {
 	height: 128px;
 	background: rgb(250,252,255);
 }
+
+.order {
+	z-index: 2;
+	position: absolute;
+	width: 30px;
+	height: 128px;
+	background: rgb(75,75,75);
+}
+
+.order ul {
+	padding: 5px;
+}
+
+.order ul li {
+	list-style: none;
+	background: rgb(255,255,255);
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	margin-bottom: 10px;
+}
+
+.order ul li:after {
+	z-index: 1;
+	content: "";
+	position: relative;
+	display: block;
+	background: rgb(220,220,220);
+	padding: 4px;
+	left: 20px;
+	width: 0;
+	opacity: 0;
+	transition: all 0.25s ease-in;
+}
+
+.order ul li.li-priority:after { content: "Priority"; width: 0; }
+.order ul li.li-id:after { content: "Id"; width: 0; }
+.order ul li.li-recent:after { content: "More recent"; width: 0; }
+
+.order ul li:hover:after {
+	left: 25px;
+	opacity: 1;
+}
+
+.order ul li.li-priority:hover:after { content: "Priority"; width: 35px; }
+.order ul li.li-id:hover:after { content: "Id"; width: 10px; }
+.order ul li.li-recent:hover:after { content: "More recent"; width: 65px; }
 
 nav {
 	height: 20px;
